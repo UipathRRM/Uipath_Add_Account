@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome: ACME System 1 - Add Account",
+  "Type": "Screen",
+  "Id": "relP7xhvF0247ruttXx7hg",
+  "Reference": "YRFmN5Vrqk2Nh-5MzOF4Tw/relP7xhvF0247ruttXx7hg",
+  "ParentRef": "YRFmN5Vrqk2Nh-5MzOF4Tw/ep7GzDhc30CyhbUFS8dLMw",
+  "Created": "2026-09-24T04:25:41.1774395Z",
+  "Updated": "2026-09-24T04:25:41.1774395Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
