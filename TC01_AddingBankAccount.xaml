@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="376,259" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="376,259" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -41,6 +41,9 @@
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.Testing</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -97,21 +100,22 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="470,3488.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1067,3922" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Add Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,3466" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ba2f74be-a643-4896-9bb2-4851deabf27c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Add Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,3899" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ba2f74be-a643-4896-9bb2-4851deabf27c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,3271.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,3704" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="RandomName" />
               <Variable x:TypeArguments="x:String" Name="LastName" />
@@ -120,14 +124,15 @@
               <Variable x:TypeArguments="x:String" Name="RandomEmail" />
               <Variable x:TypeArguments="x:Decimal" Name="RandomAge" />
               <Variable x:TypeArguments="x:Decimal" Name="RandomDependents" />
+              <Variable x:TypeArguments="x:String" Name="result" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <utat:GivenName DisplayName="Generate Given Name" GivenNameResult="[RandomName]" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="GivenName_1" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomName]" Version="V5">
+            <utat:GivenName DisplayName="Generate Given Name" GivenNameResult="[RandomName]" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="GivenName_1" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomName]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="ktluHshSHEW2ndiXlpLltQ" DesignTimeRectangle="333, 549, 607, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='firstname' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="fa1d9439-82e2-47bc-9f15-8271470fe454" InformativeScreenshot="59a7436d6d24f69c57ec4c36ffc47a4e.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/jMMgufZZEkC1bI5BfL0jGw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -148,8 +153,8 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <utat:LastName DisplayName="Generate Last Name" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="LastName_1" LastNameResult="[LastName]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[LastName]" Version="V5">
+            <utat:LastName DisplayName="Generate Last Name" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="LastName_1" LastNameResult="[LastName]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[LastName]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="S8qZ7SfjnU2WhHPjj02aAQ" DesignTimeRectangle="333, 641, 607, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='lastname' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="57c267bd-fcd4-4834-a6b2-aaa489aaffd7" InformativeScreenshot="77b28a4b05c6d3217bbe6cf6f18a7591.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/qVmphkVz20GyfXb5UntyYA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -170,8 +175,8 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <utat:Address AddressResult="[RandomAddress]" City="&lt;Random City&gt;" Country="Mexico" DisplayName="Generate Address" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="Address_1" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City, State, Zip'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[String.Join(&quot;, &quot;, New String() {If(RandomAddress.TryGetValue(&quot;City&quot;, Nothing), RandomAddress(&quot;City&quot;), String.Empty), If(RandomAddress.TryGetValue(&quot;State&quot;, Nothing), RandomAddress(&quot;State&quot;), String.Empty), If(RandomAddress.TryGetValue(&quot;ZIP&quot;, Nothing), RandomAddress(&quot;ZIP&quot;), String.Empty)})]" Version="V5">
+            <utat:Address AddressResult="[RandomAddress]" City="&lt;Random City&gt;" Country="Mexico" DisplayName="Generate Address" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="Address_1" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'City, State, Zip'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[String.Join(&quot;, &quot;, New String() {If(RandomAddress.TryGetValue(&quot;City&quot;, Nothing), RandomAddress(&quot;City&quot;), String.Empty), If(RandomAddress.TryGetValue(&quot;State&quot;, Nothing), RandomAddress(&quot;State&quot;), String.Empty), If(RandomAddress.TryGetValue(&quot;ZIP&quot;, Nothing), RandomAddress(&quot;ZIP&quot;), String.Empty)})]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="ABeJz_a2g0uMq7tEf6j4BA" DesignTimeRectangle="333, 734, 607, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='city-state-zip' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="dcca2646-2399-4e3f-924c-dbd37e44d619" InformativeScreenshot="12d9994af0303e4697d59d14af7233d6.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/euNPfZCQDUuVj05gptjKng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -192,8 +197,8 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <utat:RandomValue DisplayName="Generate Random Value" FilePath="C:\Users\ricardo.rosales\OneDrive - UiPath\Documents\UiPath\Adding Bank Account _TestingExcersies\PhoneNumberList.txt" sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="RandomValue_1" Value="[RandomPhone]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomPhone]" Version="V5">
+            <utat:RandomValue DisplayName="Generate Random Value" FilePath="C:\Users\ricardo.rosales\OneDrive - UiPath\Documents\UiPath\Adding Bank Account _TestingExcersies\PhoneNumberList.txt" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="RandomValue_1" Value="[RandomPhone]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomPhone]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="ETQd7NDiBkaEfTATCZ7NnQ" DesignTimeRectangle="333, 827, 607, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='phone' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="62c76ac6-0b15-4f26-992f-cb45e2e00d50" InformativeScreenshot="fbfe53c8b44104e6b6ef73e96ac2290d.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/Nz5HCIwlbkODbQ69ePzkZA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -214,8 +219,8 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <utat:RandomValue DisplayName="Generate Random Value" FilePath="C:\Users\ricardo.rosales\OneDrive - UiPath\Documents\UiPath\Adding Bank Account _TestingExcersies\EmailList.txt" sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="RandomValue_2" Value="[RandomEmail]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomEmail]" Version="V5">
+            <utat:RandomValue DisplayName="Generate Random Value" FilePath="C:\Users\ricardo.rosales\OneDrive - UiPath\Documents\UiPath\Adding Bank Account _TestingExcersies\EmailList.txt" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="RandomValue_2" Value="[RandomEmail]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomEmail]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="BF1-7cFYg06KfUsHV35LzQ" DesignTimeRectangle="333, 919, 607, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="06a856cc-e88f-493f-ac58-233011db71cf" InformativeScreenshot="52f18aae9c3484796bdac6f306e364a6.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/27oLhaWeUECfQr1JpmjQyA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -236,8 +241,8 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <utat:RandomNumber Decimals="{x:Null}" DisplayName="Generate Random Number" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="RandomNumber_1" Max="60" Min="18" Output="[RandomAge]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Age'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomAge.ToString]" Version="V5">
+            <utat:RandomNumber Decimals="{x:Null}" DisplayName="Generate Random Number" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="RandomNumber_1" Max="60" Min="18" Output="[RandomAge]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Age'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomAge.ToString]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="_XTnPUdUEkODA9SdWc5rVA" DesignTimeRectangle="333, 631, 607, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='age' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="1747576c-b505-4267-8579-bb6694ef51f5" InformativeScreenshot="9c09605d5aa4d6d8fa49bf185f4b98db.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/ES08DCX8eE2-o1kf0qPimg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -258,8 +263,8 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <utat:RandomNumber Decimals="{x:Null}" DisplayName="Generate Random Number" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="RandomNumber_2" Max="3" Min="0" Output="[RandomDependents]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Number of Dependents'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomDependents.ToString]" Version="V5">
+            <utat:RandomNumber Decimals="{x:Null}" DisplayName="Generate Random Number" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="RandomNumber_2" Max="3" Min="0" Output="[RandomDependents]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Number of Dependents'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Text="[RandomDependents.ToString]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="MdrlUv548U6kTK0V4cjs-w" DesignTimeRectangle="333, 723, 607, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='dependents' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="42b75044-1718-4fa5-bd30-8dcc1108d660" InformativeScreenshot="7213d07e19fa9654b04b5e2c95e27509.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/Fn6pvRoJYki1tmpkKyT1Cw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -280,9 +285,20 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Toggle navigation ACME …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Toggle navigation ACME …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/bank/account" ContentHash="VAGCsgnNN02o1SylCfPAkw" DesignTimeRectangle="333, 909, 131, 42" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='buttonScoreCard' tag='BUTTON' /&gt;" Guid="4b7bba6f-7055-46cb-b471-4fc5097a3e97" InformativeScreenshot="74ec4537407a1e5126abe165fcc72acd.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/eNnuVY6kDU-coSDmZ3oGjA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Add Account' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Account was created!'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,143" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" TextString="[result]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/bank/account" ContentHash="Um4McWlCCUSn6XB0fO9cbQ" DesignTimeRectangle="713, 177, 511, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl role='text' automationid='' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="20f054de-9f7a-4acc-a2d6-27585af4eb17" InformativeScreenshot="381695d212139dc4c4ec7d8ed4e0647f.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/HtjoapJ5WEK3h-iMm0zJnQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Add Account - Google Chrome' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Expression" Expression="[result =&quot;Account was created!&quot;]" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="VerifyExpression_2" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba2f74be-a643-4896-9bb2-4851deabf27c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/bank/account" ContentHash="hjr1yITTL0OsbU2Jl64ZjA" DesignTimeRectangle="1143, 218, 81, 44" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" Guid="ceec5008-64c4-41c9-8c52-fc3273f01dd9" InformativeScreenshot="16bbf7a7041417f5b9d9f48712fec1b3.jpg" Reference="YRFmN5Vrqk2Nh-5MzOF4Tw/db7JZ2q_PkiZbA0zH0Nedw" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Add Account - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
           </Sequence>
